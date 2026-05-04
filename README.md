@@ -2,6 +2,8 @@
 
 An AI-powered resume analysis tool built with **Streamlit**, **Groq**, and **LLaMA 3.3**. Upload your PDF resume and receive a scored review complete with keyword gap analysis, section breakdowns, and line-by-line rewrite suggestions — all in seconds.
 
+🔗 **Live demo → [resume-reviewer.streamlit.app](https://resume-reviewer.streamlit.app)**
+
 ---
 
 ## ✨ Features
@@ -24,10 +26,21 @@ An AI-powered resume analysis tool built with **Streamlit**, **Groq**, and **LLa
 | LLM | LLaMA 3.3 70B via [Groq](https://groq.com) |
 | PDF Parsing | [pdfplumber](https://github.com/jsvine/pdfplumber) |
 | API Client | `groq` Python SDK |
+| Hosting | Streamlit Cloud |
 
 ---
 
-## 🚀 Getting Started
+## ⚙️ How It Works
+
+1. **Upload** a text-based PDF resume (scanned images are not supported)
+2. **Optionally paste** a job description for tailored keyword matching
+3. **Click Analyze** — the resume text is extracted and sent to Groq's API
+4. LLaMA 3.3 returns a **structured JSON response** with scores, strengths, improvements, and keywords
+5. Results are rendered across **four tabbed sections** with a visual scoring dashboard
+
+---
+
+## 🚀 Run Locally
 
 ### 1. Clone the repo
 
@@ -73,22 +86,6 @@ resume-reviewer/
 
 ---
 
-## ⚙️ How It Works
-
-1. **Upload** a text-based PDF resume (scanned images are not supported)
-2. **Optionally paste** a job description for tailored keyword matching
-3. **Click Analyze** — the resume text is extracted and sent to Groq's API
-4. LLaMA 3.3 returns a **structured JSON response** with scores, strengths, improvements, and keywords
-5. Results are rendered across **four tabbed sections** with a visual scoring dashboard
-
----
-
-## 🔒 Privacy
-
-Your resume is sent to Groq's API for analysis only. It is **not stored** by this application. Review [Groq's privacy policy](https://groq.com/privacy-policy/) for details on their data handling.
-
----
-
 ## 📦 Requirements
 
 ```
@@ -97,19 +94,11 @@ pdfplumber
 groq
 ```
 
-Add these to your `requirements.txt` before deploying.
-
 ---
 
-## ☁️ Deploying to Streamlit Cloud
+## 🔒 Privacy
 
-1. Push the repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your repo
-3. In **App settings → Secrets**, add:
-   ```
-   GROQ_API_KEY = "your_groq_api_key_here"
-   ```
-4. Deploy — the app will be live at `your-app-name.streamlit.app`
+Your resume is sent to Groq's API for analysis only. It is **not stored** by this application. Review [Groq's privacy policy](https://groq.com/privacy-policy/) for details on their data handling.
 
 ---
 
